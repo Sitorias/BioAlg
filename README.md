@@ -1,6 +1,16 @@
-# K-Means Implementation
+﻿# K-Means Implementation
 
 Das ist der Octave Sourcecode für die Rechnerübung zu Algorithmen der Bioinformatik II
+Die Aufgabenteile werden jeweils in einem Skript bearbeitet.
+
+* Script = 1a)
+* Script2 = 1b)
+* Script3 = 1c)
+* Script4 = 1d)
+* Script5 = 2)
+
+Ansonsten werden einige Hilfsfunktionen zum plotten und Cluster initialisieren benutzt. Jedes Script speichert die erzeugten Bilder als png.
+Der Cluster Algorithmus befindet sich in kMeans.m
 
 ## Aufgabe 1
 ### a)
