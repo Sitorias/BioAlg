@@ -30,14 +30,4 @@ function [a,b,c,d,X] = initClusters(std=0.5, N =100)
   c = generateCluster(std,[0,1],N);
   d = generateCluster(std,[1,1],N);
   X = vertcat(a,b,c,d);
-  
-  figure()
-  scatter(a(:,1),a(:,2),100,'fill')
-  hold on
-  scatter(b(:,1),b(:,2),100,'fill')
-  hold on
-  scatter(c(:,1),c(:,2),100,'fill')
-  hold on
-  scatter(d(:,1),d(:,2),100,'fill')
-  hold off
 endfunction

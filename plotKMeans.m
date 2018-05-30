@@ -23,8 +23,7 @@
 ## Author: Sven Durchholz <Sven Durchholz@STARDUST>
 ## Created: 2018-05-29
 
-function retval = plotKMeans (XAssigned, centroids)
-  figure()
+function plotKMeans (XAssigned, centroids)
   scatter(XAssigned(:,1),XAssigned(:,2),100,XAssigned(:,3),"fill")
   hold on
   scatter(centroids(:,1),centroids(:,2),200,"r","s","fill")

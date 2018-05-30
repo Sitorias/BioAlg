@@ -1,20 +1,25 @@
 % Exercise 1 d)
-% robust variante
+% robust variante (Manhatten)
 
 [a,b,c,d,X] = initClusters(0.5);
-title("std=0.5, n=100 (4 clusters)")
+figure(1)
+plotClusters(a,b,c,d)
+title("std=0.5, n=100 (4 clusters) (1d)")
+saveas (1, "data_1d.png");
 
 % Get random centroids from the dataset
 centroidRows = randperm(size(X)(1));
 initCentroids = X(centroidRows(1:4), :);
 
 % Plot
-[assignments, centroids, error] = kMeans(X,4,initCentroids,2);
+[assignments, centroids, error] = kMeans(X,4,initCentroids,"Manhatten");
 XAssigned = horzcat(X, assignments);
+figure(2)
 plotKMeans(XAssigned, centroids)
-title("K-Means (randperm), std=0.5, L1-Norm")
+title("Cluster (randperm), std=0.5, L1-Norm (1d)")
+saveas (2, "cluster_1d.png");
 
-bestPerK = zeros(1,10);
+bestErrorsPerInit = zeros(1,9);
 for k = 2:10  
   bestErrorsPerInit = zeros(1,20);
   for i = 1:20
@@ -22,30 +27,38 @@ for k = 2:10
     centroidRows = randperm(size(X)(1));
     initCentroids = X(centroidRows(1:k), :);
     
-    [assignments, centroids, error] = kMeans(X,k,initCentroids,2);
+    [assignments, centroids, error] = kMeans(X,k,initCentroids,"Manhatten");
     bestErrorsPerInit(i) = min(error);
   endfor
-  bestPerK(k) = min(bestErrorsPerInit);
+  bestPerK(k-1) = min(bestErrorsPerInit);
 endfor
-figure()
-plot(bestPerK)
-title("K-Means (randperm), std=0.5, L1-Norm")
 
+% x-axis is actually k-1! (How to change this in octave?)
+figure(3)
+plot(bestPerK)
+title("K-Function (randperm), std=0.5, L1-Norm (1d)")
+saveas (3, "Kfunc_1d.png");
 
 [a,b,c,d,X] = initClusters(0.25);
-title("std=0.25, n=100 (4 clusters)")
+figure(4)
+plotClusters(a,b,c,d)
+title("std=0.25, n=100 (4 clusters) (1d)")
+saveas(4,"data025_1d.png")
 
 % Get random centroids from the dataset
 centroidRows = randperm(size(X)(1));
 initCentroids = X(centroidRows(1:4), :);
 
 % Plot
-[assignments, centroids, error] = kMeans(X,4,initCentroids,2);
+[assignments, centroids, error] = kMeans(X,4,initCentroids,"Manhatten");
 XAssigned = horzcat(X, assignments);
+figure(5)
 plotKMeans(XAssigned, centroids)
-title("K-Means (randperm), std=0.25, L1-Norm")
+title("Cluster (randperm), std=0.25, L1-Norm (1d)")
+saveas (5, "cluster025_1d.png");
 
-bestPerK = zeros(1,10);
+
+bestErrorsPerInit = zeros(1,9);
 for k = 2:10  
   bestErrorsPerInit = zeros(1,20);
   for i = 1:20
@@ -53,11 +66,12 @@ for k = 2:10
     centroidRows = randperm(size(X)(1));
     initCentroids = X(centroidRows(1:k), :);
     
-    [assignments, centroids, error] = kMeans(X,k,initCentroids,2);
+    [assignments, centroids, error] = kMeans(X,k,initCentroids,"Manhatten");
     bestErrorsPerInit(i) = min(error);
   endfor
-  bestPerK(k) = min(bestErrorsPerInit);
+  bestPerK(k-1) = min(bestErrorsPerInit);
 endfor
-figure()
+figure(6)
 plot(bestPerK)
-title("K-Means (randperm), std=0.25, L1-Norm")
+title("K-Function (randperm), std=0.25, L1-Norm (1d)")
+saveas (6, "kFunc025_1d.png");
