@@ -1,3 +1,6 @@
+% Exercise 2
+% load dataset and plot the k-function again, as in c) and d)
+
 % load
 load("GexprData1.mat");
 % transpose the matrix (worked with rows for values...)

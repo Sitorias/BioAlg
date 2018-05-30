@@ -1,5 +1,5 @@
 % Exercise 1 d)
-% robust variante (Manhatten)
+% robust variante (Manhatten), otherwise same as c)
 
 [a,b,c,d,X] = initClusters(0.5);
 figure(1)
@@ -39,6 +39,8 @@ plot(bestPerK)
 title("K-Function (randperm), std=0.5, L1-Norm (1d)")
 saveas (3, "Kfunc_1d.png");
 
+
+% Use the 0.25 standard deviation, repeat everything!
 [a,b,c,d,X] = initClusters(0.25);
 figure(4)
 plotClusters(a,b,c,d)

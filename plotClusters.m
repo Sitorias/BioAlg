@@ -1,4 +1,5 @@
 % Just a little helper class, removing redundancy!
+% Plot 4 cluster
 function plotClusters (a,b,c,d) 
   scatter(a(:,1),a(:,2),100,'fill')
   hold on

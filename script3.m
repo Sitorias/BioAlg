@@ -1,5 +1,7 @@
 % Exercise 1 c)
-% increment k
+% increment k and make plots for best MSE with k
+% note: The X-Axis is actually k-1!
+%     How to change the axis?
 
 [a,b,c,d,X] = initClusters(0.5);
 %Plot raw clusters
@@ -30,6 +32,8 @@ plot(bestPerK)
 title("K-Function (randperm), std=0.5, L2-Norm (1c)")
 saveas (2, "kFunc_1c.png");
 
+
+% Use the 0.25 standard deviation, repeat everything!
 [a,b,c,d,X] = initClusters(0.25);
 figure(3)
 plotClusters(a,b,c,d)

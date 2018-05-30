@@ -1,1 +1,1 @@
-function [cluster] = generateCluster(deviation=.5, meanVector=[0,0], num=100)  cluster = randn(num,2).*deviation+meanVector;  return;endfunction
+% Simple cluster generation, with given mean,deviation and size.function [cluster] = generateCluster(deviation=.5, meanVector=[0,0], num=100)  cluster = randn(num,2).*deviation+meanVector;  return;endfunction
