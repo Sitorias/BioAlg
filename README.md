@@ -28,7 +28,7 @@ Wenn ein Cluster keine Punkte hat, werden die Centroids neu initialisiert.
 var(x) = sqrt(std) = sqrt(0.5) = 0.25
 
 #### Wird dieser Wert praktisch erreicht?
-Nein, der Wert liegt eher bei 0.4 - 0.6
+Nein, der Wert liegt eher bei 0.3-0.35
 
 #### Wodurch lassen sich syst. Abweichungen erklären?
 Die Cluster überschneiden sich stark. Der Erwartungswert würde erreicht werden, wenn der Centroid perfekt mittig liegt, aber die Cluster werden nicht klar erkannt, wodurch die Centroids sich meistens merkbar verschieben.
@@ -47,7 +47,7 @@ Bei c) wird zusätzlich die Clusteranzahl k variiert. Dies erfolgt über eine fo
 *Anmerkung: Beim Plotten wird die Lücke nicht beachtet, entweder wird die 1 als "0" geplottet, oder der ganze plot ist um 1 verschoben. Die erzeugten plots nutzen k-1, die X-Achse ist daher nicht ganz richtig.*
 
 #### Mit Standardabweichung 0.5
-Es ergibt eine relativ seichte kurve. Man kann einen gewissen Knick bei 4 erkennen, allerdings ist dieser nicht ganz so deutlich.
+Es ergibt eine relativ seichte kurve. Man kann einen gewissen Knick bei 4 erkennen, allerdings ist dieser nicht wirklich deutlich.
 
 #### Mit Standardabweichung 0.25
 Bei k=4 erkennt man eindeutig einen Einbruch der Qualitätsverbesserung. Das deutet daraufhin, dass k=4 wirklich die Anzahl der cluster ist (was auch der Fall ist!)
@@ -61,7 +61,7 @@ Wie Aufgabe c), nur mit der Manhatten Distanz.
 Sehr ähnlich zu c), man erkennt keine klaren Cluster. Der Fehler ist allgemein etwas niedriger.
 
 #### Mit Standardabweichung 0.25
-Fast identisch zu c)
+ähnlich c)
 
 #### Cluster
 Die Cluster bei 0.25 sind sehr stabil (wie auch bei der Euklidischen Distanz)
